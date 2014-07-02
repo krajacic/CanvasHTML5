@@ -1,27 +1,59 @@
-<html>
-    <head>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
-        </script>
-        <script type="text/javascript">
-            $(document).ready(function() {
+ <!DOCTYPE html>
      
+    <html>
+            <head>
+                    <title>Learning the basics of canvas</title>
+                    <meta charset="utf-8">
+     
+                    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+     
+                    <script type="text/javascript">
+                            $(document).ready(function() {
+                                
+                        
+                                
+                                
+                        var canvas = $("#myCanvas");
+                        var context = canvas.get(0).getContext("2d");
+                        var text236="Hello World!";
+                        context.font="60px Calibri";
+                        context.strokeText(text236, 40,40); //text that you wanna draw,x,y positions
+                                
+                        context.fillStyle = "rgb(100, 200, 200)"; //color of fill style
+                        context.strokeStyle = "rgb(160, 35, 0)"; //color of stroke
+                        
+                        context.strokeRect(200, 100, 200, 100); //make stroke rect x, y, width, height 
+                        
+                        context.strokeStyle="rgb(100,100,100)";     
+                        context.lineWidth=3; //make linke thick
+                                
+                        context.beginPath(); //start the path
+                        context.moveTo(20, 40); //begin with dot x,y
+                        context.lineTo(340, 80); //make line TO dot x,y
+                        context.closePath(); //close the path
+                        context.stroke(); //make outline path
+                                
+                        context.beginPath(); //start the path
+                        context.arc(150,100,50,0,Math.PI*2, false); //draw circle x,y of center... radius,start angle,end angle, anti-clockwise drawing (true/false)... angles are in RADIANS
+                        context.closePath(); //close the path
+                        context.fill(); //fill the path
+                                
+                        var degrees = 1; // 1 degree
+                        var radians = degrees * (Math.PI / 180); // 0.0175 radians
+                        
+                                
+                                
+                        
+                                
+                                
                             });
-        </script>
-        <style>
-		body {
-			background-color:black;
-			margin:50px;
-			text-align:center;
-		}
-
-		canvas {
-			border:3px solid #0c9ee5;
-		}
-	</style>
-    </head>
-    <body>
-        <canvas id="canvas" width="500" height="500">
+                     
+                    </script>
+            </head>
+     
+            <body>
+                    <canvas id="myCanvas" width="500" height="500">
                             <!-- Insert fallback content here -->
-        </canvas>
-    </body>
-</html>
+                    </canvas>
+            </body>
+    </html>
