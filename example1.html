@@ -7,7 +7,14 @@
      
                     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
      
-                    <script type="text/javascript">
+                    
+            </head>
+     
+            <body>
+                    <canvas id="myCanvas" width="500" height="500">
+                            <!-- Insert fallback content here -->
+                    </canvas>
+                <script type="text/javascript">
                             $(document).ready(function() {
                                 
                         
@@ -17,7 +24,11 @@
                         var context = canvas.get(0).getContext("2d");
                         var text236="Hello World!";
                         context.font="60px Calibri";
-                        context.strokeText(text236, 40,40); //text that you wanna draw,x,y positions
+                        context.strokeText(text236, 40,60); //text that you wanna draw,x,y positions
+                        
+                        var textDate="3/7/2014";
+                        context.font="45px Arial";
+                        context.strokeText(textDate, 210, 160);
                                 
                         context.fillStyle = "rgb(100, 200, 200)"; //color of fill style
                         context.strokeStyle = "rgb(160, 35, 0)"; //color of stroke
@@ -28,13 +39,13 @@
                         context.lineWidth=3; //make linke thick
                                 
                         context.beginPath(); //start the path
-                        context.moveTo(20, 40); //begin with dot x,y
-                        context.lineTo(340, 80); //make line TO dot x,y
+                        context.moveTo(40, 240); //begin with dot x,y
+                        context.lineTo(400, 200); //make line TO dot x,y
                         context.closePath(); //close the path
                         context.stroke(); //make outline path
                                 
                         context.beginPath(); //start the path
-                        context.arc(150,100,50,0,Math.PI*2, false); //draw circle x,y of center... radius,start angle,end angle, anti-clockwise drawing (true/false)... angles are in RADIANS
+                        context.arc(130,175,50,0,Math.PI*2, false); //draw circle x,y of center... radius,start angle,end angle, anti-clockwise drawing (true/false)... angles are in RADIANS
                         context.closePath(); //close the path
                         context.fill(); //fill the path
                                 
@@ -49,11 +60,5 @@
                             });
                      
                     </script>
-            </head>
-     
-            <body>
-                    <canvas id="myCanvas" width="500" height="500">
-                            <!-- Insert fallback content here -->
-                    </canvas>
             </body>
     </html>
